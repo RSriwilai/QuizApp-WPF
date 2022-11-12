@@ -18,9 +18,7 @@ namespace QuizApp_WPF.Views
     /// </summary>
     public partial class EditView : UserControl
     {
-        private FileManager.FileManager _fileManager;
-
-        public List<Quiz>? Quizzes { get; set; }
+        private readonly FileManager.FileManager _fileManager;
         public Quiz? SelectedQuiz { get; set; }
         public dynamic? SelectedItem { get; set; }
         public string[] CategoriesArray { get; set; } = { "Addition", "Substraction", "General" };
@@ -40,7 +38,8 @@ namespace QuizApp_WPF.Views
         private async Task InitializeQuizzes()
         {
             var quizzes = await _fileManager.LoadQuizzesAsync();
-            Quizzes = quizzes;
+            SelectQuizComboBox.ItemsSource = quizzes;
+            SelectQuizComboBox.DisplayMemberPath = "Title";
         }
 
         private void SelectQuizComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

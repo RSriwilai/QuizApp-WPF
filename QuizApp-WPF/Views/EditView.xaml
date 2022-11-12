@@ -87,7 +87,7 @@
             </StackPanel>
         </DockPanel>
 
-        <ComboBox x:Name="SelectQuizComboBox" ItemsSource="{Binding Quizzes}" SelectedValuePath="Id" Grid.Row="0"  Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"
+        <ComboBox x:Name="SelectQuizComboBox" SelectedValuePath="Id" Grid.Row="0"  Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"
                   DisplayMemberPath="Title" Margin="0,0,5,0" SelectionChanged="SelectQuizComboBox_OnSelectionChanged" SelectedIndex="0" ></ComboBox>
 
         <Button x:Name="SaveButton" Click="SaveButton_OnClick" Grid.Row="0" Grid.Column="5" Width="100" Height="22" Margin="0,0,5,0">Save</Button>

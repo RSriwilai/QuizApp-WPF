@@ -17,7 +17,6 @@ namespace QuizApp_WPF.Views
     public partial class PlayView : UserControl
     {
         private FileManager.FileManager _fileManager;
-        public List<Quiz>? Quizzes { get; set; }
         public Quiz? SelectedQuiz { get; set; }
         public string? SelectedCategory { get; set; }
 
@@ -50,7 +49,9 @@ namespace QuizApp_WPF.Views
 
         private async Task InitializeQuizzes()
         {
-            Quizzes = await _fileManager.LoadQuizzesAsync();
+            var quizzes = await _fileManager.LoadQuizzesAsync();
+            SelectQuizComboBox.ItemsSource = quizzes;
+            SelectQuizComboBox.DisplayMemberPath = "Title";
         }
 
         private void SelectQuizComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

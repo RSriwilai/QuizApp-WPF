@@ -22,7 +22,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="SelectQuizComboBox" ItemsSource="{Binding Path=Quizzes}" DisplayMemberPath="Title" SelectionChanged="SelectQuizComboBox_OnSelectionChanged"
+        <ComboBox x:Name="SelectQuizComboBox" SelectionChanged="SelectQuizComboBox_OnSelectionChanged"
                   Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="120"></ComboBox>
 
         <ComboBox x:Name="SelectCategoryComboBox" ItemsSource="{Binding Categories}" SelectionChanged="SelectCategoryComboBox_OnSelectionChanged" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"></ComboBox>
